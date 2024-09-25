@@ -1,0 +1,42 @@
+.container {
+    max-width: 70rem;
+}
+
+.color-section {
+    height: 100px;
+}
+
+.border-1px {
+    border: 1px solid;
+    border-color: var(--secondary-color);
+}
+
+.color-pallete {
+    flex-grow: 1;
+}
+
+.color-pallete>div {
+    padding: 1rem;
+}
+
+.color-pallete span {
+    margin-right: 0.5rem;
+}
+
+.typography-section {
+    flex: 1;
+}
+
+.typography-section>div {
+    margin-bottom: 1rem;
+}
+
+.typography-section>div>p:first-child {
+    padding-block: 1rem;
+}
+
+section>h2>span {
+    margin-right: 0.5rem;
+    font-weight: 700;
+    color: hsl(var(--white-color) / 0.4);
+}
