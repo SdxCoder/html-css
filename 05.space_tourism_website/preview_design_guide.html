@@ -101,6 +101,57 @@
                 </div>
             </div>
         </section>
+        <section class="flow">
+            <h2 class="uppercase"><span>03</span>Interactive elements</h2>
+
+            <nav class="primary-navigation flex" style="margin-top: 4rem;">
+                <li class="nav-item underline-indicators active">
+                    <a href="#1" class="uppercase text-white ff-sans-cond fs-300 letter-space-sm">
+                        <span class="text-white">01</span>Active
+                    </a>
+                </li>
+                <li class="nav-item underline-indicators">
+                    <a href="#2" class="uppercase text-white ff-sans-cond fs-300 letter-space-sm">
+                        <span class="text-white">02</span>Hovered
+                    </a>
+                </li>
+                <li class="nav-item underline-indicators">
+                    <a href="#3" class="uppercase text-white ff-sans-cond fs-300 letter-space-sm">
+                        <span class="text-white">03</span>Idle
+                    </a>
+                </li>
+            </nav>
+            <div class="grid" style="margin-top: 5rem; place-items: center; grid-template-columns: 1fr 1fr;">
+                <a class="large-button uppercase bg-white text-primary ff-serif fs-600" href="#">Explore</a>
+
+                <div class="secondary-navigation flex" style="--nav-item-padding: 0.5rem;">
+                    <button aria-selected="true"
+                        class="nav-item underline-indicators uppercase bg-primary text-secondary ff-sans-cond fs-300 letter-space-sm">
+                        <span class="text-white">01</span>Moon
+                    </button>
+                    <button aria-selected="false"
+                        class="nav-item underline-indicators uppercase bg-primary text-secondary ff-sans-cond fs-300 letter-space-sm">
+                        <span class="text-white">02</span>Mars
+                    </button>
+                    <button aria-selected="false"
+                        class="nav-item underline-indicators uppercase bg-primary text-secondary ff-sans-cond fs-300 letter-space-sm">
+                        <span class="text-white">03</span>Europa
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex">
+                <button aria-selected="true" class="dot-indicator"><span class="sr-only">Indicator</span></button>
+                <button aria-selected="false" class="dot-indicator"><span class="sr-only">Indicator</span></button>
+                <button aria-selected="false" class="dot-indicator"><span class="sr-only">Indicator</span></button>
+            </div>
+            <div class="flex">
+                <button aria-selected="false" class="number-indicator">1</button>
+                <button aria-selected="true" class="number-indicator">2</button>
+                <button aria-selected="false" class="number-indicator">3</button>
+            </div>
+
+        </section>
 
     </div>
 </body>
