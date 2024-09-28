@@ -16,12 +16,12 @@
     /* font sizes */
     --fs-200: 0.875rem;
     --fs-300: 1rem;
-    --fs-400: 1.125rem;
+    --fs-400: 0.9375rem;
     --fs-500: 1.75rem;
-    --fs-600: 2rem;
-    --fs-700: 3.5rem;
-    --fs-800: 6.25rem;
-    --fs-900: 9.375rem;
+    --fs-600: 1rem;
+    --fs-700: 1.5rem;
+    --fs-800: 3.5rem;
+    --fs-900: 5rem;
 
     /* spacing */
     --gap: 1rem;
@@ -30,6 +30,27 @@
     /* sizes */
     --size-mobile: 25rem;
     --size-tablet: 48.75rem;
+}
+
+@media (min-width: 25rem) {
+    :root {
+        /* font sizes */
+        --fs-400: 1rem;
+        --fs-600: 1.5rem;
+        --fs-700: 2.5rem;
+        --fs-800: 5rem;
+        --fs-900: 9.375rem;
+    }
+}
+
+@media (min-width: 45rem) {
+    :root {
+        /* font sizes */
+        --fs-400: 1.125rem;
+        --fs-600: 2rem;
+        --fs-700: 3.5rem;
+        --fs-800: 6.25rem;
+    }
 }
 
 /* ---------------------------
@@ -67,6 +88,8 @@ body {
     background-color: hsl(var(--primary-color));
     line-height: 1.5;
     min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 h1,
@@ -119,12 +142,6 @@ select {
 
 .flow>*:where(:not(:last-child)) {
     margin-bottom: var(--flow-space, 1rem);
-}
-
-.container {
-    max-width: 90rem;
-    margin-inline: auto;
-    padding-inline: 2rem;
 }
 
 .sr-only {
@@ -251,7 +268,7 @@ select {
 
 
 .large-button {
-    display: flex;
+    display: inline-flex;
     position: relative;
     border-radius: 50%;
     padding: 0 2rem;
@@ -378,47 +395,38 @@ select {
     height: var(--logo-size, 2rem);
 }
 
-body {
+.home {
     background-image: url("../assets/home/background-home-mobile.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#home-content {
-    min-height: 100vh;
+.grid-container {
+    display: grid;
+    column-gap: var(--gap);
+    padding-inline: 2rem;
+    justify-items: center;
     text-align: center;
 }
 
-#home-content .large-button {
-    max-width: 7rem;
-    justify-self: center;
-    font-size: var(--fs-300);
-}
-
-.primary-navigation-large {
+.primary-header {
     display: none;
 }
 
 @media (min-width: 25rem) {
-
-    body {
+    .home {
         background-image: url("../assets/home/background-home-tablet.jpg");
     }
 
-    #home-content {
-        align-items: center;
-        justify-items: center;
-    }
-
-    #home-content .large-button {
-        max-width: 17rem;
+    .grid-container>div:first-child {
+        align-self: center;
     }
 
     .primary-navigation-mobile {
         display: none;
     }
 
-    .primary-navigation-large {
+    .primary-header {
         margin-left: 1rem;
         display: flex;
         align-items: center;
@@ -432,29 +440,34 @@ body {
 
 }
 
-@media (min-width: 47.5rem) {
-
-    body {
-        background-image: url("../assets/home/background-home-desktop.jpg");
+@media (min-width: 45rem) {
+    .grid-container {
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
     }
 
-    #home-content {
-        margin: 0 2rem;
-        grid-template-columns: 1fr 1fr;
+    .grid-container>div:first-child {
+        grid-column: 2;
+        align-self: center;
         text-align: start;
     }
 
-    #home-content .large-button {
+    .grid-container>div:last-child {
+        grid-column: 3;
+        align-self: center;
         justify-self: end;
     }
 
-    .primary-navigation-large>div {
-        flex: 0.3;
+    .home {
+        background-image: url("../assets/home/background-home-desktop.jpg");
+    }
+
+    .primary-header>div {
+        flex: 0.4;
     }
 }
 
 @media (min-width: 60rem) {
-    .primary-navigation-large>div {
+    .primary-header>div {
         flex: 1;
     }
 
