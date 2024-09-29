@@ -21,7 +21,7 @@
     --fs-600: 1rem;
     --fs-700: 1.5rem;
     --fs-800: 3.5rem;
-    --fs-900: 5rem;
+    --fs-900: clamp(5rem, 9vw + 1rem, 9.375rem);
 
     /* spacing */
     --gap: 1rem;
@@ -32,14 +32,13 @@
     --size-tablet: 48.75rem;
 }
 
-@media (min-width: 25rem) {
+@media (min-width: 35rem) {
     :root {
         /* font sizes */
         --fs-400: 1rem;
         --fs-600: 1.5rem;
         --fs-700: 2.5rem;
         --fs-800: 5rem;
-        --fs-900: 9.375rem;
     }
 }
 
@@ -170,6 +169,10 @@ select {
     background-color: hsl(var(--white-color));
 }
 
+.bg-none {
+    background-color: transparent;
+}
+
 
 .text-primary {
     color: hsl(var(--primary-color));
@@ -237,15 +240,15 @@ select {
 }
 
 .letter-space-sm {
-    letter-spacing: 2.35;
+    letter-spacing: 2.35px;
 }
 
 .letter-space-md {
-    letter-spacing: 2.7;
+    letter-spacing: 2.7px;
 }
 
 .letter-space-lg {
-    letter-spacing: 4.75;
+    letter-spacing: 4.75px;
 }
 
 .uppercase {
@@ -260,6 +263,10 @@ select {
 
 .text-center {
     text-align: center;
+}
+
+.display-block {
+    display: block;
 }
 
 /* ---------------------------
@@ -307,7 +314,7 @@ select {
 
 .nav-item {
     cursor: pointer;
-    padding: var(--nav-item-padding, 1.5rem 0);
+    padding: var(--nav-item-padding, 1.5rem) 0;
 }
 
 .primary-navigation>.nav-item>a {
@@ -332,11 +339,12 @@ select {
 
 .underline-indicators.active,
 .underline-indicators[aria-selected="true"] {
+    color: hsl(var(--white-color));
     border-bottom: 1.5px solid hsl(var(--white-color));
 }
 
 .secondary-navigation {
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .dot-indicator {
@@ -378,11 +386,6 @@ select {
     color: hsl(var(--primary-color));
 }
 
-
-/* ---------------------------
-        Home Page
---------------------------- */
-
 .primary-navigation-mobile {
     margin: 1rem;
     height: 2.5rem;
@@ -393,12 +396,6 @@ select {
 .logo {
     width: var(--logo-size, 2rem);
     height: var(--logo-size, 2rem);
-}
-
-.home {
-    background-image: url("../assets/home/background-home-mobile.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .grid-container {
@@ -413,11 +410,36 @@ select {
     display: none;
 }
 
-@media (min-width: 25rem) {
-    .home {
-        background-image: url("../assets/home/background-home-tablet.jpg");
-    }
+/* ---------------------------
+        Home Page
+--------------------------- */
 
+.home {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ---------------------------
+        Destination Page
+--------------------------- */
+
+.destination {
+    background-image: url("../assets/destination/background-destination-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.divider {
+    border-top: 0.5px solid hsl(var(--white-color) / 0.3);
+}
+
+
+/* ---------------------------
+        Media Queries Page
+--------------------------- */
+
+@media (min-width: 35rem) {
     .grid-container>div:first-child {
         align-self: center;
     }
@@ -438,31 +460,48 @@ select {
         flex: 1;
     }
 
+    /* Home Page */
+    .home {
+        background-image: url("../assets/home/background-home-tablet.jpg");
+    }
+
+    /* Destination Page */
+    .destination {
+        background-image: url("../assets/destination/background-destination-tablet.jpg");
+    }
+
 }
 
 @media (min-width: 45rem) {
     .grid-container {
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+        padding: 0;
     }
 
-    .grid-container>div:first-child {
+    .col-2-mx {
         grid-column: 2;
         align-self: center;
         text-align: start;
     }
 
-    .grid-container>div:last-child {
+    .col-3-mx {
         grid-column: 3;
         align-self: center;
         justify-self: end;
     }
 
+    .primary-header>div {
+        flex: 0.4;
+    }
+
+    /* Home Page */
     .home {
         background-image: url("../assets/home/background-home-desktop.jpg");
     }
 
-    .primary-header>div {
-        flex: 0.4;
+    /* Destination Page */
+    .destination {
+        background-image: url("../assets/destination/background-destination-desktop.jpg");
     }
 }
 
