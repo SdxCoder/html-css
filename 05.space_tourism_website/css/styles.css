@@ -17,7 +17,7 @@
     --fs-200: 0.875rem;
     --fs-300: 1rem;
     --fs-400: 0.9375rem;
-    --fs-500: 1.75rem;
+    --fs-500: 1rem;
     --fs-600: 1rem;
     --fs-700: 1.5rem;
     --fs-800: 3.5rem;
@@ -36,6 +36,7 @@
     :root {
         /* font sizes */
         --fs-400: 1rem;
+        --fs-500: 1.25rem;
         --fs-600: 1.5rem;
         --fs-700: 2.5rem;
         --fs-800: 5rem;
@@ -46,6 +47,7 @@
     :root {
         /* font sizes */
         --fs-400: 1.125rem;
+        --fs-500: 1.5rem;
         --fs-600: 2rem;
         --fs-700: 3.5rem;
         --fs-800: 6.25rem;
@@ -284,6 +286,7 @@ select {
     align-items: center;
     text-decoration: none;
     z-index: 1;
+    font-size: 2rem;
 }
 
 .large-button::after {
@@ -434,13 +437,26 @@ select {
     border-top: 0.5px solid hsl(var(--white-color) / 0.3);
 }
 
+.grid-container--destination {
+    place-content: center;
+}
+
+.secondary-navigation {
+    justify-content: center;
+}
+
+.grid-container--destination>img {
+    max-width: 45%;
+}
+
+
 
 /* ---------------------------
         Media Queries Page
 --------------------------- */
 
 @media (min-width: 35rem) {
-    .grid-container>div:first-child {
+    .grid-container--home>div:first-child {
         align-self: center;
     }
 
@@ -470,6 +486,14 @@ select {
         background-image: url("../assets/destination/background-destination-tablet.jpg");
     }
 
+    .grid-container--destination {
+        margin-block: 2rem;
+    }
+
+    .grid-container--destination>*:first-child {
+        justify-self: start;
+    }
+
 }
 
 @media (min-width: 45rem) {
@@ -478,28 +502,59 @@ select {
         padding: 0;
     }
 
-    .col-2-mx {
-        grid-column: 2;
-        align-self: center;
-        text-align: start;
-    }
-
-    .col-3-mx {
-        grid-column: 3;
-        align-self: center;
-        justify-self: end;
-    }
-
     .primary-header>div {
         flex: 0.4;
     }
 
     /* Home Page */
+    .grid-container--home>div:first-child {
+        grid-column: 2;
+        align-self: center;
+        text-align: start;
+    }
+
+    .grid-container--home>div:last-child {
+        grid-column: 3;
+        align-self: center;
+        justify-self: end;
+    }
+
     .home {
         background-image: url("../assets/home/background-home-desktop.jpg");
     }
 
     /* Destination Page */
+    .grid-container--destination {
+        place-items: center;
+    }
+
+
+    .grid-container--destination>*:first-child {
+        justify-self: start;
+        grid-column: 2 / 4;
+        grid-row: 1;
+    }
+
+    .grid-container--destination>*:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+
+    }
+
+    .grid-container--destination>*:last-child {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .grid-container--destination>*:last-child * {
+        justify-content: start;
+        text-align: start;
+    }
+
+    .grid-container--destination>img {
+        max-width: 89%;
+    }
+
     .destination {
         background-image: url("../assets/destination/background-destination-desktop.jpg");
     }
