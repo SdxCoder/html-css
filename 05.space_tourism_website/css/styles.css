@@ -437,10 +437,6 @@ select {
     border-top: 0.5px solid hsl(var(--white-color) / 0.3);
 }
 
-.grid-container--destination {
-    place-content: center;
-}
-
 .secondary-navigation {
     justify-content: center;
 }
@@ -525,7 +521,7 @@ select {
 
     /* Destination Page */
     .grid-container--destination {
-        place-items: center;
+        place-content: center;
     }
 
 
