@@ -30,9 +30,6 @@ Then open any folder in your browser or code editor (like VS Code) to view the p
 ---
 
 ## 📸 Screenshots
-
-> *(Optional — you can add images of a few project outputs here!)*  
-> Example:
 > ![Screenshot](screenshots/tourisim-ui-home.png)
 > ![Screenshot](screenshots/tourisim-ui-dest.png)
 
